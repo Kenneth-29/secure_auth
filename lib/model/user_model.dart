@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class User {
+class lUser {
   final String id;
   final String name;
   final String email;
   final String password;
 
-  User({
+  lUser({
     required this.id,
     required this.name,
     required this.email,
@@ -23,7 +23,7 @@ class User {
     };
   }
 
-  User.fromDocumentSnapshot(DocumentSnapshot<Map<String, dynamic>> doc)
+  lUser.fromDocumentSnapshot(DocumentSnapshot<Map<String, dynamic>> doc)
       : id = doc.data()!["id"],
         name = doc.data()!["name"],
         email = doc.data()!["email"],

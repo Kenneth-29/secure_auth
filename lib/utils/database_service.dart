@@ -5,7 +5,7 @@ import 'package:secure_auth/model/user_model.dart';
 final FirebaseFirestore _db = FirebaseFirestore.instance;
 final CollectionReference _usersCollection = _db.collection("Users");
 
-Future createUser(User user) async {
+Future createUser(lUser user) async {
   try {
     await _usersCollection.doc(user.id).set(user.toJson());
   } catch (e) {
