@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:secure_auth/model/user_model.dart';
+import 'package:secure_auth/utils/database_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // Firebase auth instance with user id and email
@@ -27,6 +29,11 @@ class AuthClient {
       if (user != null) {
         uid = user.uid;
         userEmail = user.email;
+
+        lUser myUser =
+            lUser(id: user.uid, name: name, email: email, password: password);
+
+        await DataStore.createUser(myUser);
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
