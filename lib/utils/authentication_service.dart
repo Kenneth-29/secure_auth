@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:secure_auth/model/user_model.dart';
 import 'package:secure_auth/utils/database_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+import 'package:crypto/crypto.dart';
 
 // Firebase auth instance with user id and email
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -30,8 +32,14 @@ class AuthClient {
         uid = user.uid;
         userEmail = user.email;
 
+        //TODO has to hash password before saving to firestore
+
+        String hashedPassword = sha256.convert(utf8.encode(password)).toString();
+
+        print(hashedPassword);
+
         lUser myUser =
-            lUser(id: user.uid, name: name, email: email, password: password);
+            lUser(id: user.uid, name: name, email: email, password: hashedPassword);
 
         await DataStore.createUser(myUser);
       }
@@ -89,4 +97,7 @@ class AuthClient {
 
     return 'User signed out';
   }
+
+  // TODO Change Password
+  // TODO Reset Password
 }
