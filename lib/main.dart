@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:secure_auth/pages/sign_in.dart';
+import 'package:g_recaptcha_v3/g_recaptcha_v3.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +15,7 @@ void main() async {
     measurementId: "G-QLFSLHQBJ0",
     storageBucket: "auth-27535.appspot.com",
   ));
+  await GRecaptchaV3.ready('6Lf3z3sfAAAAAJnRYvNSin09du7rNxEwGaQ8vr8M');
   runApp(const MyApp());
 }
 
