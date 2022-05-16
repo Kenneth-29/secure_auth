@@ -1,16 +1,24 @@
-# secure_auth
+# CET 324 Assignment 2 - Secure Auth app
 
-A new Flutter project.
+This application illustrates appropriate design approaches to cybersercurity in applications.
 
-## Getting Started
+## Prerequisits before running this application
+-Must have:
+  - Chrome
+  - VsCode/Android Studio
+- Using VsCode: 
+  - [x] Install Flutter SDK
+  - [x] Install Flutter plugin for VsCode
 
-This project is a starting point for a Flutter application.
+- Using Android Studio: 
+  - [x] Install Flutter SDK
+  - [x] Install Flutter plugin for Android Studio
 
-A few resources to get you started if this is your first Flutter project:
+## Running the application
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+  - [x] Open the project with VsCode/Android Studio
+  - [x] Open terminal in editor
+  - [x] run `flutter run -d chrome` in the terminal
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+Visit https://auth-27535.web.app/#/ for hosted version
